@@ -1,37 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Project } from './project';
 import { Injectable } from '@angular/core';
+
+const BASE_URL = "http://localhost:3000";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectsService {
-  projects: Project[] = [
-    {
-      id: '1',
-      title: 'Remote Project One',
-      details: 'This is a sample project',
-      percentComplete: 20,
-      approved: false,
-    },
-    {
-      id: '2',
-      title: 'Remote Project Two',
-      details: 'This is a sample project',
-      percentComplete: 40,
-      approved: false,
-    },
-    {
-      id: '3',
-      title: 'Remote Project Three',
-      details: 'This is a sample project',
-      percentComplete: 100,
-      approved: true,
-    }
-  ];
+  model = 'projects';
+  constructor(private httpClient: HttpClient) { }
 
-  constructor() { }
-
-  all(): Project[] {
-    return this.projects;
+  all() {
+    return this.httpClient.get(`${BASE_URL}${this.model}`);
   }
 }
