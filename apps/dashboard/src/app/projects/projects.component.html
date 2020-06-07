@@ -33,12 +33,12 @@
       <mat-card-header>
         <mat-card-title>
           <h1>
-            <span *ngIf="selectedProject; else elseBlock">{{selectedProject.title}}</span>
+            <span *ngIf="selectedProject.title; else elseBlock">{{selectedProject.title}}</span>
             <ng-template #elseBlock>Select a Project</ng-template>
           </h1>
         </mat-card-title>
       </mat-card-header>
-      <form *ngIf="selectedProject" (submit)="saveProject(selectedProject)">
+      <form (submit)="saveProject(selectedProject)">
         <mat-card-content>
           <mat-form-field class="full-width">
             <input matInput placeholder="Title" [(ngModel)]="selectedProject.title" type="text" name="title">

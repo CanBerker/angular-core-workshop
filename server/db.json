@@ -95,7 +95,7 @@
     {
       "id": "2",
       "title": "Project Two",
-      "details": "This is a sample project",
+      "details": "This is a sample project#1",
       "percentComplete": 40,
       "approved": false,
       "startDate": null,
@@ -113,6 +113,13 @@
       "targetDate": null,
       "completionDate": null,
       "customerId": "7"
+    },
+    {
+      "id": "iREz0lg",
+      "title": "Project Three",
+      "details": "This a newly generated project",
+      "percentComplete": 5,
+      "approved": false
     }
   ]
 }
