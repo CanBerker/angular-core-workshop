@@ -67,7 +67,7 @@ export class ProjectsComponent implements OnInit {
       .subscribe(result => this.getProjects());
   }
 
-  cancel() {
+  cancel(currentProject: Project) {
     this.resetProjectSelection();
   }
 }
