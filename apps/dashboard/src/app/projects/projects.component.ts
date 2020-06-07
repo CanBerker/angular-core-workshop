@@ -19,11 +19,15 @@ export class ProjectsComponent implements OnInit {
   }
 
   selectProject(project: Project) {
-    this.selectedProject = project;
+    this.selectedProject = project;;
   }
 
   getProjects() {
     this.projects$ = this.projectsService.all();
+  }
+
+  saveProject(project) {
+    
   }
 
   deleteProject(project: Project) {

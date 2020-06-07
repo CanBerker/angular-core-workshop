@@ -38,9 +38,25 @@
           </h1>
         </mat-card-title>
       </mat-card-header>
-      <form>
+      <form *ngIf="selectedProject" (submit)="saveProject(selectedProject)">
         <mat-card-content>
-          <pre>{{selectedProject | json}}</pre>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Title" [(ngModel)]="selectedProject.title" type="text" name="title">
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Details" [(ngModel)]="selectedProject.details" type="text" name="details">
+          </mat-form-field>
+          <section class="full-width">
+            <h4>{{selectedProject.percentComplete}}% percent complete</h4>
+            <mat-slider 
+              class="full-width" min="0" max="100" thumbLabel
+              [(ngModel)]="selectedProject.percentComplete" name="percentComplete"></mat-slider>
+          </section>
+          <section class="full-width">
+            <mat-checkbox [(ngModel)]="selectedProject.approved" name="approve">
+              Approved by customer
+            </mat-checkbox>
+          </section>
         </mat-card-content>
         <mat-card-actions>
           <button type="submit" mat-button color="primary">Save</button>
